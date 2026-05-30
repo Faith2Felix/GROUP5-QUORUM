@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="css/SignUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your <br> Voting Account</h1>
+        <p>Join the competition and start <br> supporting nominees instantly.</p>
+        <div class="form">
+            <form action="#">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <div class="password">
+                    <input type="password" id="password" placeholder="Password" required >
+                    <span id="togglePassword">👁</span> 
+                </div>
+                <div class="password">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required >
+                    <span id="toggleConfirmPassword">👁</span>
+                </div>
+                <div class="strength" id="result"></div>
+                <button onclick="signUp()">Sign Up</button>
+            </div>
+            <div class="line">
+                <hr><span>Or</span><hr>
+            </div>
+            <div class="google">
+                <button><img src="Images/google.png" alt="">Continue with Google</button>
+            </div>
+            <p class="or">Already have an account? <a href="SignIn.html">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/SignUp.js"></script>
+
+</body>
+</html>
