@@ -1,14 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Route, Routes } from "react-router-dom";
+import Wallet from "./pages/WALLET/WalletHome";
+import AppLayout from "./Layouts/AppLayout";
+import Walletcoins from "./pages/WALLET/Walletcoins";
+import WalletPay from "./pages/WALLET/WalletPay";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<h1>Quorum</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route element={< AppLayout/>} >
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/wallet-coins" element={< Walletcoins/>} />
+      <Route path="/wallet-pay" element={< WalletPay/>} />
+      </Route>
+    </Routes>
   );
 }
-
 export default App;
