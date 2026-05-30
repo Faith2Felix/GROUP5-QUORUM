@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/SignIn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue voting and tracking<br> your favorite nominees.</p>
+        <div class="form">
+            <form action="#">
+                <div class="mail">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 14h.01" />
+                    <path d="M6.5 10.5c1.9-1.9 5.1-1.9 7 0" />
+                    <path d="M3 7a10 10 0 0 1 14 0" />
+                    <rect x="14" y="15" width="6" height="5" rx="1" />
+                    <path d="M15 15v-2a2 2 0 0 1 4 0v2" />
+                    </svg>
+                    <input type="password" id="password" placeholder="Password" required >
+                    <span id="togglePassword">👁</span> 
+                </div>
+
+                <div class="forgot"><a href="forgotPassword.html">Forgot Password</a></div>
+                
+                <div class="strength" id="result"></div>
+                <button onclick="signIn()">Sign In</button>
+            </div>
+            <div class="line">
+                <hr><span>Or</span><hr>
+            </div>
+            <div class="google">
+                <button><img src="Images/google.png" alt="">Continue with Google</button>
+            </div>
+            <p class="or">Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="JS/SignIn.js"></script>
+</body>
+</html>
