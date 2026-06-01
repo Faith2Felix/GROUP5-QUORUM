@@ -26,7 +26,6 @@
         }
     });
 
-
     const input = document.getElementById("password")
     const result = document.getElementById("result")
     input.addEventListener("input",() => {
@@ -54,47 +53,43 @@
         }
         } )
 
-        function signUp() {
-        const errorMsg = document.getElementById("errorMsg");
-        const successMsg = document.getElementById("successMsg");
 
-        errorMsg.style.display = "none";
-        successMsg.style.display = "none";
 
-        if (password.value !== confirmPassword.value) {
+        const continueBtn = document.getElementById("continueBtn");
+
+        function checkForm() {
+        if (
+        password.value.trim() !== "" &&
+        confirmPassword.value.trim() !== ""
+        ) {
+        continueBtn.disabled = false;
+        } else {
+        continueBtn.disabled = true;
+        }
+        }
+
+        password.addEventListener("input", checkForm);
+        confirmPassword.addEventListener("input", checkForm);
+
+
+    function resetPassword() {
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    errorMsg.style.display = "none";
+    successMsg.style.display = "none";
+
+    if (password.value !== confirmPassword.value) {
         errorMsg.style.display = "block";
         return;
-        }
-
-        successMsg.style.display = "block";
-        signUpBtn.disabled = true;
-    
-        setTimeout(() => {
-        window.location.href = "SignIn.html";
-        }, 2000);
-}
-
-    const signUpBtn = document.querySelector("button[onclick='signUp()']");
-    signUpBtn.disabled = true;
-
-    const fullName = document.getElementById("fullName");
-    const email = document.getElementById("email");
-
-    function checkForm() {
-        if (
-            fullName.value.trim() !== "" &&
-            email.value.trim() !== "" &&
-            password.value.trim() !== "" &&
-            confirmPassword.value.trim() !== ""
-        ) {
-            signUpBtn.disabled = false;
-        } else {
-            signUpBtn.disabled = true;
-        }
     }
 
-    fullName.addEventListener("input", checkForm);
-    email.addEventListener("input", checkForm);
-    password.addEventListener("input", checkForm);
-    confirmPassword.addEventListener("input", checkForm);
+    successMsg.style.display = "block";
+    continueBtn.disabled = true;
 
+    setTimeout(() => {
+        window.location.href = "SignIn.html";
+    }, 2500);
+}
+
+        

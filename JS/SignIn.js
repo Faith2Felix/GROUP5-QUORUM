@@ -12,4 +12,24 @@ const password = document.getElementById("password");
         }
 
     });
-    
+  
+    function signIn() {
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    errorMsg.style.display = "none";
+    successMsg.style.display = "none";
+
+    if (email.value.trim() === "" || password.value.trim() === "") {
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    //to be replaced by backend
+    successMsg.style.display = "block";
+    signInBtn.disabled = true;
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 2000);
+}

@@ -13,6 +13,13 @@
     <div class="container">
         <h1>Create Your <br> Voting Account</h1>
         <p>Join the competition and start <br> supporting nominees instantly.</p>
+        <div class="success-msg" id="successMsg">
+            ✅ Welcome to Quorom! Your account has been created. Redirecting...
+        </div>
+
+        <div class="error-msg" id="errorMsg">
+            ❌ Passwords do not match. Please try again.
+        </div>
         <div class="form">
             <form action="#">
                 <input type="text" id="fullName" placeholder="Full Name" required>
@@ -26,8 +33,10 @@
                     <span id="toggleConfirmPassword">👁</span>
                 </div>
                 <div class="strength" id="result"></div>
-                <button onclick="signUp()">Sign Up</button>
-            </div>
+
+            
+                <button id="signUpBtn" type="button" onclick="signUp()">Sign Up</button>
+            
             <div class="line">
                 <hr><span>Or</span><hr>
             </div>
