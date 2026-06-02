@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Walletcoins = () => {
+const WalletCoins = () => {
   return (
     <div>
       purchase voting coin
@@ -8,4 +8,4 @@ const Walletcoins = () => {
   )
 }
 
-export default Walletcoins
+export default WalletCoins
