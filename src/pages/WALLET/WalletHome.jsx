@@ -104,7 +104,7 @@ const Wallet = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 w-full z-50">
+      <div>
         <BottomNav />
       </div>
     </div>
