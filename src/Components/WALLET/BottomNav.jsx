@@ -19,7 +19,7 @@ const BottomNav = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-[#0F172A] shadow-[0_-4px_20px_rgba(0,0,0,0.4)] border-t-3 border-black/25 flex justify-around py-3 z-50">
+    <div className="fixed bottom-0 left-0 w-full bg-[#0F172A] shadow-[0_-4px_20px_rgba(0,0,0,0.4)] border-t-[3px] border-black/35 flex justify-around z-50">
       {navItems.map((item) => {
         const isActive = activeTab === item.id;
         const Icon = item.icon;
@@ -35,13 +35,11 @@ const BottomNav = () => {
             {/* ICON WRAPPER */}
             <div
               className={`p-2 rounded-full transition-all duration-300 ${
-                isActive ? "bg-[#7B3FF2]" : "[#FFFFFF]/[0.35]"
+                isActive ? "bg-[#7B3FF2]" : "bg-gray-400/35"
               }`}
             >
               <Icon
-                color={isActive ? "#FFFFFF" : "#8593A8"}
-                fill-opacity={isActive ? "1" : "0.35"}
-              />
+              color={isActive ? "#FFFFFF" : "#F8FAFC"} />
             </div>
 
             {/* LABEL */}
