@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CardIcon, BankIcon, UssdIcon, EWalletIcon } from "../../assets/Icon";
+import { BackArrowIcon } from "../../assets/Icon";
 
 const WalletPay = () => {
   const [selectedMethod, setSelectedMethod] = useState(null);

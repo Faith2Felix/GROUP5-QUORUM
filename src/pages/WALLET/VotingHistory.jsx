@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import profile from "../../assets/Images/profile.png";
 
 const VotingHistory = () => {
   const navigate = useNavigate();
@@ -10,35 +11,22 @@ const VotingHistory = () => {
       candidate: "Jane Doe",
       votes: 5,
       date: "20 May 2025",
-      image: "https://i.pravatar.cc/150?img=5",
+      image: "",
     },
     {
       id: 2,
       candidate: "Jane Doe",
       votes: 5,
       date: "20 May 2025",
-      image: "https://i.pravatar.cc/150?img=6",
-    },
-    {
-      id: 3,
-      candidate: "John Smith",
-      votes: 10,
-      date: "21 May 2025",
-      image: "https://i.pravatar.cc/150?img=7",
+      image: "",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-white px-5 pt-10">
+    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-5 pt-20">
       {/* Header */}
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-12"
-      >
-        ←
-      </button>
 
-      <h1 className="text-center text-3xl font-bold mb-16">
+      <h1 className="text-center text-[32px] font-semibold mb-26">
         Voting History
       </h1>
 
@@ -48,27 +36,21 @@ const VotingHistory = () => {
           <div key={vote.id}>
             <div className="flex items-center gap-4">
               <img
-                src={vote.image}
+                src={profile}
                 alt={vote.candidate}
                 className="w-14 h-14 rounded-full object-cover"
               />
 
               <div>
-                <h3 className="font-semibold">
-                  {vote.candidate}
-                </h3>
+                <h3 className="font-semibold text-lg">{vote.candidate}</h3>
 
-                <p className="text-gray-300 text-sm">
-                  {vote.votes} Votes
-                </p>
+                <p className="text-gray-300 text-base">{vote.votes} Votes</p>
 
-                <p className="text-gray-400 text-sm">
-                  {vote.date}
-                </p>
+                <p className="text-gray-400 text-base">{vote.date}</p>
               </div>
             </div>
 
-            <div className="mt-4 border-b border-violet-600"></div>
+            <div className="mt-4 border-b border-[#7B3FF2]"></div>
           </div>
         ))}
       </div>

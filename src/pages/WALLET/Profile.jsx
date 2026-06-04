@@ -1,10 +1,10 @@
 import React from "react";
-import { profile } from "../../assets/Images/profile.png";
+import profile from "../../assets/Images/profile.png";
 import { useNavigate } from "react-router-dom";
 import {
   EditIcon,
   WalletIcon,
-  VotesIcon,
+  VoteIcon,
   NotificationIcon,
   SupportIcon,
   LogoutIcon,

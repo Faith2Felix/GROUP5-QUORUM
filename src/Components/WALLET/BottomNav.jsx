@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   HomeIcon,
   LeaderboardIcon,
-  VotesIcon,
+  VoteIcon,
   WalletIcon,
   UserIcon,
 } from "../../assets/Icon";
@@ -13,7 +13,7 @@ const BottomNav = () => {
   const navItems = [
     { id: "home", label: "Home", icon: HomeIcon },
     { id: "leaderboard", label: "Leaderboard", icon: LeaderboardIcon },
-    { id: "votes", label: "Votes", icon: VotesIcon },
+    { id: "votes", label: "Votes", icon: VoteIcon },
     { id: "wallet", label: "Wallet", icon: WalletIcon },
     { id: "profile", label: "Profile", icon: UserIcon },
   ];

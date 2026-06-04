@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BackArrowIcon } from "../../assets/Icon";
+
 
 const WalletCoin = () => {
   const [selected, setSelected] = useState(null);

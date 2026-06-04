@@ -1,7 +1,10 @@
 import React from "react";
 import { NotificationIcon, VoteIcon } from "../../assets/Icon";
+import { useNavigate } from "react-router-dom";
 
 const Wallet = () => {
+  const navigate = useNavigate();
+
   const transactions = [
     {
       title: "Vote Deduction",
@@ -74,7 +77,10 @@ const Wallet = () => {
       {/* TRANSACTIONS */}
       <div className="flex justify-between items-center mt-6">
         <h2 className="text-xl">Recent Transactions</h2>
-        <button onClick={() => navigate("/transactions-history")} className="text-xs text-gray-300">
+        <button
+          onClick={() => navigate("/transaction-history")}
+          className="text-xs text-gray-300"
+        >
           View All
         </button>
       </div>
@@ -88,7 +94,7 @@ const Wallet = () => {
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 flex items-center justify-center">
-                <VoteIcon alt="icon" className="w-5 h-5" color="#9747FF"/>
+                <VoteIcon alt="icon" className="w-5 h-5" color="#9747FF" />
               </div>
 
               <div>
