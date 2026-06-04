@@ -74,7 +74,9 @@ const Wallet = () => {
       {/* TRANSACTIONS */}
       <div className="flex justify-between items-center mt-6">
         <h2 className="text-xl">Recent Transactions</h2>
-        <button className="text-xs text-gray-300">View All</button>
+        <button onClick={() => navigate("/transactions-history")} className="text-xs text-gray-300">
+          View All
+        </button>
       </div>
 
       {/* Transactions List */}

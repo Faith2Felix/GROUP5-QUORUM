@@ -1,39 +1,62 @@
+import React, { useState } from "react";
 import {
-  EventsIcon,
   HomeIcon,
   LeaderboardIcon,
   VotesIcon,
   WalletIcon,
+  UserIcon,
 } from "../../assets/Icon";
 
 const BottomNav = () => {
+  const [activeTab, setActiveTab] = useState("home");
+
+  const navItems = [
+    { id: "home", label: "Home", icon: HomeIcon },
+    { id: "leaderboard", label: "Leaderboard", icon: LeaderboardIcon },
+    { id: "votes", label: "Votes", icon: VotesIcon },
+    { id: "wallet", label: "Wallet", icon: WalletIcon },
+    { id: "profile", label: "Profile", icon: UserIcon },
+  ];
+
   return (
-    <div className="fixed bottom-0 left-0 w-full right-0 bg-[#1E293B] border-t border-gray-800 flex justify-around py-5 z-50">
-      <div className="flex flex-col items-center text-[#8593A8] gap-2">
-        <HomeIcon />
-        <p className="text-[10px] ">HOME</p>
-      </div>
+    <div className="fixed bottom-0 left-0 w-full bg-[#0F172A] shadow-[0_-4px_20px_rgba(0,0,0,0.4)] border-t-3 border-black/25 flex justify-around py-3 z-50">
+      {navItems.map((item) => {
+        const isActive = activeTab === item.id;
+        const Icon = item.icon;
 
-      <div className="flex flex-col items-center text-[#8593A8] gap-2">
-        <EventsIcon />
-        <p className="text-[10px] ">EVENTS</p>
-      </div>
+        return (
+          <div
+            key={item.id}
+            onClick={() => setActiveTab(item.id)}
+            className={`flex flex-col items-center transition-all duration-300 ${
+              isActive ? "-translate-y-7" : ""
+            }`}
+          >
+            {/* ICON WRAPPER */}
+            <div
+              className={`p-2 rounded-full transition-all duration-300 ${
+                isActive ? "bg-[#7B3FF2]" : "[#FFFFFF]/[0.35]"
+              }`}
+            >
+              <Icon
+                color={isActive ? "#FFFFFF" : "#8593A8"}
+                fill-opacity={isActive ? "1" : "0.35"}
+              />
+            </div>
 
-      <div className="flex flex-col items-center text-[#8593A8] gap-2">
-        <WalletIcon />
-        <p className="text-[10px] ">WALLET</p>
-      </div>
-
-      <div className="flex flex-col items-center text-[#8593A8] gap-2">
-        <VotesIcon />
-        <p className="text-[10px] ">VOTES</p>
-      </div>
-
-      <div className="flex flex-col items-center text-[#8593A8] gap-2">
-        <LeaderboardIcon />
-        <p className="text-[10px] ">LEADERBOARD</p>
-      </div>
+            {/* LABEL */}
+            <p
+              className={`text-base mt-1 transition-all duration-300 ${
+                isActive ? "text-white opacity-100" : "opacity-0 translate-y-1"
+              }`}
+            >
+              {item.label}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 };
+
 export default BottomNav;

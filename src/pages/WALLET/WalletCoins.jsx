@@ -4,7 +4,7 @@ const WalletCoin = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-16 pb-24">
+    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-10 pb-24">
       {/* Header */}
       <div className="px-6">
         <h1 className="text-2xl font-semibold">Purchase Voting Coins</h1>

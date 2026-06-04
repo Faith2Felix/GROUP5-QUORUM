@@ -7,7 +7,7 @@ const PaymentProcess = () => {
   // Demo simulation
   useEffect(() => {
     const timer = setTimeout(() => {
-      setStatus("pending"); 
+      setStatus("failed"); 
 
       // other possibilities:
       // setStatus("failed");

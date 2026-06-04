@@ -4,16 +4,18 @@ import AppLayout from "./Layouts/AppLayout";
 import WalletCoins from "./pages/WALLET/WalletCoins";
 import WalletPay from "./pages/WALLET/WalletPay";
 import PaymentProcess from "./pages/WALLET/PaymentProcess";
+import TransactionHistory from "./pages/WALLET/TransactionHistory";
 
 function App() {
   return (
     <Routes>
-      <Route element={<AppLayout />}>
+      <Route path="/" element={<AppLayout />}>
         <Route path="/wallet" element={<WalletHome />} />
         <Route path="/wallet-coins" element={<WalletCoins />} />
         <Route path="/wallet-pay" element={<WalletPay />} />
       </Route>
       <Route path="/payment-process" element={<PaymentProcess />} />
+      <Route path="/transaction-history" element={<TransactionHistory />} />
     </Routes>
   );
 }

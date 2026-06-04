@@ -5,18 +5,18 @@ const WalletPay = () => {
   const [selectedMethod, setSelectedMethod] = useState(null);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-36 pb-24">
+    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-26 pb-24">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-semibold">Select Payment Method</h1>
       </div>
 
       {/* Payment Methods */}
-      <div className="mt-8 space-y-4">
+      <div className="mt-10 space-y-4">
         {/* Card Payment */}
         <div
           onClick={() => setSelectedMethod("card")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-5 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
         >
           <div className="flex items-center gap-4">
             <CardIcon />
@@ -33,7 +33,7 @@ const WalletPay = () => {
         {/* Bank Transfer */}
         <div
           onClick={() => setSelectedMethod("bank")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-5 text-sm flex items-center justify-between cursor-pointer transition duration-200 ${
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200 ${
             selectedMethod === "bank" ? "" : ""
           }`}
         >
@@ -52,7 +52,7 @@ const WalletPay = () => {
         {/* USSD */}
         <div
           onClick={() => setSelectedMethod("ussd")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-5 text-sm flex items-center justify-between cursor-pointer transition duration-200`}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200`}
         >
           <div className="flex items-center gap-4">
             <UssdIcon />
@@ -69,7 +69,7 @@ const WalletPay = () => {
         {/* E-Wallet */}
         <div
           onClick={() => setSelectedMethod("ewallet")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-5 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
         >
           <div className="flex items-center gap-4">
             <EWalletIcon />
