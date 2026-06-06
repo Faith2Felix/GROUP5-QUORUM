@@ -4,10 +4,10 @@ import { Search, X } from "lucide-react";
 export default function SearchBar({ value, onChange, placeholder }) {
 
   return (
-    <div className="flex items-center gap-6 bg-white/5 border border-white/10 rounded-lg px-12 py-3">
+    <div className="flex items-center gap-6 bg-white/5 border-3 border-[rgb(68,81,101)] rounded-2xl px-12 py-3">
 
       {/* Icon */}
-      <Search className="w-6 h-6 text-white/40 shrink-0" />
+      <Search className="w-6 h-6 text-white shrink-0" />
 
       <input
         type="text"
@@ -16,9 +16,9 @@ export default function SearchBar({ value, onChange, placeholder }) {
         placeholder={placeholder}              
         className="
           bg-transparent       
-          text-white/70        
+          text-[rgb(240,240,241)]       
           text-sm              
-          placeholder:text-white/40 
+          placeholder:text-[rgb(226,227,229)]
           outline-none         
           flex-1               
         "

@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Sun, Bell, ChevronRight, Star, Trophy } from "lucide-react";
+import { Sun, Bell } from "lucide-react";
 
 import SearchBar from "../../Components/Voting/SearchBar";
 import NomineeCard from "../../Components/Voting/NomineeCard";
@@ -23,11 +23,11 @@ function QuorumVotingHome() {
   }, [search]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-[#f5f3ee] bg-[linear-gradient(175deg,#06060e_0%,#06060e_38%,#0a1628_65%,#0d2045_100%)]">
+    <div className="relative min-h-screen overflow-hidden text-[#f5f3ee] bg-[rgb(38,46,66)]">
       {/* Ambient glow */}
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_600px_300px_at_80%_10%,rgba(58,111,216,0.07)_0%,transparent_70%),radial-gradient(ellipse_400px_400px_at_10%_70%,rgba(201,168,76,0.05)_0%,transparent_60%)]" />
 
-      <div className="relative z-[2] overflow-y-auto px-5 pb-20">
+      <div className="relative z-2 overflow-y-auto px-5 pb-20">
         {/* Greeting */}
         <div className="pt-7 pb-1">
           <div className="mb-1 text-[16px] font-light tracking-[2px] text-rgb(221 221 221)">
@@ -43,11 +43,11 @@ function QuorumVotingHome() {
 
             <button
               type="button"
-              className="relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-[#8a94a8]"
+              className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/4 text-[#8a94a8]"
               aria-label="Notifications"
             >
               <Bell className="w-10 h-10 text-[rgb(255,255,255)]" />
-              <span className="absolute right-2 top-[2px] h-[10px] w-[10px] rounded-full border-[1.5px] border-[#06060e] bg-[rgb(255,255,255)]" />
+              <span className="absolute right-2 top-0.5 h-2.5 w-2.5 rounded-full border-[1.5px] border-[#06060e] bg-[rgb(255,255,255)]" />
             </button>
           </div>
 
@@ -63,8 +63,7 @@ function QuorumVotingHome() {
         </div>
 
         {/* Campaign Banner */}
-        <div className="relative mt-[32px] flex items-center justify-between gap-3 overflow-hidden rounded-2xl border border-[rgba(58,111,216,0.3)] bg-[rgb(221,221,221)] px-5 py-[18px]">
-          {/* <div className="pointer-events-none absolute top-6 h-[120px] w-[120px] rounded-full bg-[rgb(221,221,221)]" /> */}
+        <div className="relative mt-8 flex items-center justify-between gap-3 overflow-hidden rounded-2xl border border-[rgba(58,111,216,0.3)] bg-[#A6A6A6] px-5 py-16">
           <div className="pointer-events-none relative items-center gap-3">
             <div className="mb-1 text-[32px] font-bold tracking-[2px] text-white">
                Campaign Server
@@ -84,7 +83,7 @@ function QuorumVotingHome() {
           </button>
         </div>
 
-        <div className="flex gap-[18px] overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-18px overflow-x-auto pb-1 scrollbar-none [&::-webkit-scrollbar]:hidden">
           {filteredTrending.map((n) => (
             <NomineeCard
               key={n.id}
@@ -106,7 +105,6 @@ function QuorumVotingHome() {
           </button>
         </div>
 
-        {/* You can keep the 4-grid OR switch to rows; this uses rows for consistency */}
         <div className="space-y-3">
           {topCategories.map((cat) => (
             <CategoryRow
@@ -120,10 +118,10 @@ function QuorumVotingHome() {
           ))}
         </div>
 
-        {/* Quick action (example button component usage) */}
+        {/* Quick action */}
         <div className="mt-6">
           <Button variant="secondary" fullWidth onClick={() => navigate("/categories")}>
-            Explore Categories
+            Leaderboard Preview 
           </Button>
         </div>
       </div>

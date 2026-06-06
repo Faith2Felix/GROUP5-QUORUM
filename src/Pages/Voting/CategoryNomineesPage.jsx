@@ -4,7 +4,7 @@ import SearchBar from "../../Components/Voting/SearchBar";
 import { getNomineesByCategory } from "../../Data/VotingData.js";
 
  function CategoryNomineesPage() {
-  const { label } = useParams(); // label is URL encoded
+  const { label } = useParams(); 
   const categoryLabel = decodeURIComponent(label);
 
   const [search, setSearch] = useState("");

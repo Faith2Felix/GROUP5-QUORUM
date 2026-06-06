@@ -1,10 +1,13 @@
 import { useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {getNomineeById } from "../../Data/VotingData.js";
+
 
 export default function NomineeDetailPage() {
   const { id } = useParams();
   const nominee = useMemo(() => getNomineeById(id), [id]);
+  const navigate = useNavigate();
+
 
   const [tab, setTab] = useState("about"); // about | stats | achievements
 
@@ -18,17 +21,17 @@ export default function NomineeDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#06060e] px-5 pt-6 text-white">
-      <div className="flex items-center gap-4">
+      <div className="grid items-center gap-12 sm:flex-row">
         <img
           src={nominee.img}
           alt={nominee.name}
-          className="h-16 w-16 rounded-full object-cover border border-white/10"
+          className="h-16 w-16 rounded-2xl object-cover border border-white/10"
         />
 
-        <div className="min-w-0">
-          <h1 className="truncate text-lg font-extrabold">{nominee.name}</h1>
-          <p className="truncate text-sm text-white/60">{nominee.category}</p>
-          <p className="text-xs text-white/50">
+        <div className="min-w-0 space-y-1">
+          <h1 className="truncate text-2xl font-bold">{nominee.name}</h1>
+          <p className="truncate text-md text-white border-[rgb(124,135,153)]">{nominee.category}</p>
+          <p className="text-md text-white/50">
             Rank #{nominee.rank} • Votes {nominee.votes.toLocaleString()}
           </p>
         </div>
@@ -87,13 +90,16 @@ export default function NomineeDetailPage() {
       </div>
 
       {/* Actions */}
-      <div className="mt-5 grid grid-cols-2 gap-3">
-        <button className="rounded-xl bg-[#c9a84c] px-4 py-3 text-sm font-extrabold text-black">
-          Vote Now
+      <div className="mt-16 flex flex-col gap-8 ">
+        <button 
+          onClick={() => navigate(`/nominees/${id}/select-votes`)}
+          className="rounded-2xl bg-[rgb(151,38,251)] px-4 py-10 text-4xl font-normal text-white"
+        >
+          Vote
         </button>
 
         <button
-          className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold"
+          className="rounded-2xl border border-[rgb(138,41,228)] bg-white/5 px-4 py-8 text-3xl font-normal"
           onClick={() => {
             // basic share (you can upgrade later)
             const url = window.location.href;
