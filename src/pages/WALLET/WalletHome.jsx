@@ -1,7 +1,10 @@
 import React from "react";
 import { NotificationIcon, VoteIcon } from "../../assets/Icon";
+import { useNavigate } from "react-router-dom";
 
 const Wallet = () => {
+  const navigate = useNavigate();
+
   const transactions = [
     {
       title: "Vote Deduction",
@@ -33,7 +36,7 @@ const Wallet = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-white flex flex-col px-5 pt-10 pb-24">
+    <div className="min-h-screen bg-[#0F172A] relative text-white flex flex-col px-5 pt-10 pb-24">
       {/* Header */}
       <div className="flex justify-between items-start">
         <div>
@@ -42,12 +45,17 @@ const Wallet = () => {
             Your voting power starts here.
           </p>
         </div>
-        <NotificationIcon className="w-6 h-6 cursor-pointer" />
+        <div
+          className="cursor-pointer absolute right-6 top-10"
+          onClick={() => navigate("/")}
+        >
+          <NotificationIcon />
+        </div>
       </div>
 
       {/* WALLET CARD */}
-      <div className="mt-5 rounded-lg p-5 bg-[#7B3FF2]">
-        <p className="text-xs py-3 text-[#E7E0EE]">Current Balance</p>
+      <div className="mt-5 rounded-lg p-3 bg-[#7B3FF2]">
+        <p className="text-xs text-[#E7E0EE]">Current Balance</p>
 
         <div className="flex justify-between items-start">
           <div>
@@ -65,30 +73,36 @@ const Wallet = () => {
           </div>
 
           {/* Button */}
-          <button className="bg-[#F4B400] text-black px-6 py-3 rounded-lg font-semibold">
-            Vote Now
+          <button
+            className="bg-[#F4B400] mt-4 text-black px-6 py-2 rounded-lg font-semibold"
+            onClick={() => navigate("/wallet-coins")}
+          >
+            Buy Coins
           </button>
         </div>
       </div>
 
       {/* TRANSACTIONS */}
-      <div className="flex justify-between items-center mt-6">
+      <div className="flex justify-between items-center mt-4">
         <h2 className="text-xl">Recent Transactions</h2>
-        <button onClick={() => navigate("/transactions-history")} className="text-xs text-gray-300">
+        <button
+          onClick={() => navigate("/transaction-history")}
+          className="text-xs text-gray-300"
+        >
           View All
         </button>
       </div>
 
       {/* Transactions List */}
-      <div className="mt-4">
+      <div>
         {transactions.map((tx, index) => (
           <div
             key={index}
-            className="flex justify-between items-center py-4 border-b border-gray-800"
+            className="flex justify-between items-center py-3 border-b border-gray-600"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex px-4 items-center gap-3">
               <div className="w-10 h-10 flex items-center justify-center">
-                <VoteIcon alt="icon" className="w-5 h-5" color="#9747FF"/>
+                <VoteIcon alt="icon" className="w-5 h-5" color="#9747FF" />
               </div>
 
               <div>
@@ -101,6 +115,13 @@ const Wallet = () => {
             <p className="text-[#F4B400] font-semibold">{tx.amount}</p>
           </div>
         ))}
+
+        <button
+          onClick={() => navigate("/transaction-history")}
+          className="text-white font-medium text-xs bg-[#7B3FF2] px-4 py-1 rounded-lg mb-24 mt-5"
+        >
+          View Transaction History
+        </button>
       </div>
     </div>
   );

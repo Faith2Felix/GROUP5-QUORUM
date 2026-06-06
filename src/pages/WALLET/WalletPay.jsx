@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import { CardIcon, BankIcon, UssdIcon, EWalletIcon } from "../../assets/Icon";
+import { BackArrowIcon } from "../../assets/Icon";
+import { useNavigate } from "react-router-dom";
 
 const WalletPay = () => {
+  const navigate = useNavigate();
   const [selectedMethod, setSelectedMethod] = useState(null);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-26 pb-24">
+    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-8 pb-24">
       {/* Header */}
+      <div
+        className="absolute top-10 left-4 text-[#D1BCFF] cursor-pointer"
+        onClick={() => navigate(-1)}
+      >
+        <BackArrowIcon />
+      </div>
+
       <div>
-        <h1 className="text-2xl font-semibold">Select Payment Method</h1>
+        <h1 className="text-2xl pt-22 font-semibold">Select Payment Method</h1>
       </div>
 
       {/* Payment Methods */}
@@ -16,7 +26,7 @@ const WalletPay = () => {
         {/* Card Payment */}
         <div
           onClick={() => setSelectedMethod("card")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-3 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
         >
           <div className="flex items-center gap-4">
             <CardIcon />
@@ -52,7 +62,7 @@ const WalletPay = () => {
         {/* USSD */}
         <div
           onClick={() => setSelectedMethod("ussd")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200`}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-3 text-sm flex items-center justify-between cursor-pointer transition duration-200`}
         >
           <div className="flex items-center gap-4">
             <UssdIcon />
@@ -69,7 +79,7 @@ const WalletPay = () => {
         {/* E-Wallet */}
         <div
           onClick={() => setSelectedMethod("ewallet")}
-          className={`border border-[#7B3FF2] rounded-lg px-4 py-4 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
+          className={`border border-[#7B3FF2] rounded-lg px-4 py-3 text-sm flex items-center justify-between cursor-pointer transition duration-200 `}
         >
           <div className="flex items-center gap-4">
             <EWalletIcon />
@@ -85,10 +95,10 @@ const WalletPay = () => {
       </div>
 
       {/* Pay Button */}
-      <div className="mt-18">
+      <div className="mt-18" onClick={() => navigate("/")}>
         <button
           disabled={!selectedMethod}
-          className={`w-full py-4 rounded-lg font-medium transition ${
+          className={`w-full py-3 rounded-lg font-medium transition ${
             selectedMethod
               ? "bg-[#7B3FF2] text-base text-white"
               : "bg-gray-600 text-gray-300 cursor-not-allowed"
@@ -97,7 +107,6 @@ const WalletPay = () => {
           Pay NGN5,000
         </button>
       </div>
-
     </div>
   );
 };
