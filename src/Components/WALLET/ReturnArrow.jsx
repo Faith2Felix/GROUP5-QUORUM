@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { BackArrowIcon } from "../../assets/Icon";
 
 const ReturnArrow = () => {
+  const navigate = useNavigate();
   return (
-    <div className="mb-10">
+    <button>
       <BackArrowIcon />
-    </div>
+    </button>
   );
 };
 export default ReturnArrow;

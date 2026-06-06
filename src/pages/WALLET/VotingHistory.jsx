@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import profile from "../../assets/Images/profile.png";
+import { BackArrowIcon } from "../../assets/Icon";
 
 const VotingHistory = () => {
   const navigate = useNavigate();
@@ -25,8 +26,14 @@ const VotingHistory = () => {
   return (
     <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-5 pt-20">
       {/* Header */}
+      <div
+        className="absolute top-10 left-6 text-[#D1BCFF] cursor-pointer"
+        onClick={() => navigate(-1)}
+      >
+        <BackArrowIcon />
+      </div>
 
-      <h1 className="text-center text-[32px] font-semibold mb-26">
+      <h1 className="text-center pt-10 text-[32px] font-semibold mb-24">
         Voting History
       </h1>
 
