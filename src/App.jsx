@@ -7,6 +7,12 @@ import PaymentProcess from "./pages/WALLET/PaymentProcess";
 import TransactionHistory from "./pages/WALLET/TransactionHistory";
 import VotingHistory from "./pages/WALLET/VotingHistory";
 import Profile from "./pages/WALLET/Profile";
+import AdminHome from "./pages/ADMIN/AdminHome"
+import FraudDetect from "./pages/ADMIN/FraudDetect";
+import UserMgt from "./pages/ADMIN/UserMgt";
+import TransMonitor from "./pages/ADMIN/TransMonitor";
+import Platform from "./pages/ADMIN/Platform";
+
 
 function App() {
   return (
@@ -20,6 +26,13 @@ function App() {
       <Route path="/transaction-history" element={<TransactionHistory />} />
       <Route path="/voting-history" element={<VotingHistory />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/admin" element={<AdminHome/>} />
+      <Route path="/fraud-detect" element={<FraudDetect/>} />
+      <Route path="/user-mgt" element={<UserMgt/>} />
+      <Route path="trans-monitor" element={<TransMonitor/>}/>
+      <Route path="platform" element={<Platform/>}/>
+
+
     </Routes>
   );
 }
