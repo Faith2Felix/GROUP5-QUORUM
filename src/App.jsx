@@ -26,36 +26,10 @@ import RevenueOverview from "./pages/organizers/RevenueOverview.jsx";
 function App() {
   const navigate = useNavigate();
 
-  // Handle jumping to screens directly from the selector dropdown box
-  const handleDevNavigation = (e) => {
-    const selectedPath = e.target.value;
-    if (selectedPath) {
-      navigate(selectedPath);
-    }
-  };
-
+  
   return (
     <>
-      {/* 🛠️ MASTER DEV SHORTCUT DROPDOWN - CENTRED TOP MIDDLE */}
-      <div className="fixed top-2 left-1/2 -translate-x-1/2 z-[99999] flex items-center bg-[#7F4DFF] text-white px-2 py-1 rounded-lg shadow-xl border border-white/10 select-none scale-90">
-        <label htmlFor="dev-route-select" className="text-[10px] uppercase font-bold tracking-wider mr-2 text-purple-200">
-          Dev Navigation:
-        </label>
-        <select
-          id="dev-route-select"
-          onChange={handleDevNavigation}
-          defaultValue=""
-          className="bg-[#090A10] text-white text-xs font-semibold rounded-lg px-2 py-1 outline-none border border-[#2E305E] cursor-pointer"
-        >
-          <option value="" disabled>--- Select Organizer Page ---</option>
-          <option value="/organizer/dashboard">1. Organizer Dashboard</option>
-          <option value="/organizer/create-event">2. Create Event Form</option>
-          <option value="/organizer/manage-categories">3. Manage Categories Panel</option>
-          <option value="/organizer/add-nominee">4. Add Nominee Screen</option>
-          <option value="/organizer/nominees-management">5. Analytics Board</option>
-          <option value="/organizer/revenue">6. Revenue Overview Ledger</option>
-        </select>
-      </div>
+     
 
       <Routes>
         {/* Splash & Onboarding Routes */}
