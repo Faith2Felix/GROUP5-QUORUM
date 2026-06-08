@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+
+// Voting Pages
 import QuorumVotingHome from "./Pages/Voting/QuorumVotingHome";
 import CategoriesPage from "./Pages/Voting/CategoriesPage";
 import CategoryNomineesPage from "./Pages/Voting/CategoryNomineesPage";
@@ -11,9 +13,8 @@ import InsufficientCoins from "./Pages/Voting/InsufficientCoins";
 import VoteSuccess from "./Pages/Voting/VoteSuccess";
 import VotingReceipt from "./Pages/Voting/VotingReceipt";
 
-
+// Wallet Pages
 import WalletHome from "./pages/WALLET/WalletHome";
-import AppLayout from "./Layouts/AppLayout";
 import WalletCoins from "./pages/WALLET/WalletCoins";
 import WalletPay from "./pages/WALLET/WalletPay";
 import PaymentProcess from "./pages/WALLET/PaymentProcess";
@@ -21,10 +22,36 @@ import TransactionHistory from "./pages/WALLET/TransactionHistory";
 import VotingHistory from "./pages/WALLET/VotingHistory";
 import Profile from "./pages/WALLET/Profile";
 
+// Layout
+import AppLayout from "./Layouts/AppLayout";
+
+// Splash & Onboarding Pages
+import SplashScreen1 from "./pages/public_pages/SplashScreen1";
+import SplashScreen2 from "./pages/public_pages/SplashScreen2";
+import OnboardingStep1 from "./pages/public_pages/OnboardingStep1";
+import OnboardingStep2 from "./pages/public_pages/OnboardingStep2";
+import OnboardingStep3 from "./pages/public_pages/OnboardingStep3";
+
+// Organizer Pages
+import TestDash from "./pages/organizers/TestDash.jsx";
+import CreateEvent from "./pages/organizers/CreateEvent.jsx";
+import ManageCategories from "./pages/organizers/ManageCategories.jsx";
+import AddNominee from "./pages/organizers/AddNominee.jsx";
+import NomineesManagement from "./pages/organizers/NomineesManagement.jsx";
+import RevenueOverview from "./pages/organizers/RevenueOverview.jsx";
+
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<QuorumVotingHome />} />
+      {/* Splash & Onboarding */}
+      <Route path="/" element={<SplashScreen1 />} />
+      <Route path="/splash-2" element={<SplashScreen2 />} />
+      <Route path="/onboarding-1" element={<OnboardingStep1 />} />
+      <Route path="/onboarding-2" element={<OnboardingStep2 />} />
+      <Route path="/onboarding-3" element={<OnboardingStep3 />} />
+
+      {/* Voting */}
+      <Route path="/voting" element={<QuorumVotingHome />} />
       <Route path="/categories" element={<CategoriesPage />} />
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
       <Route path="/nominees" element={<NomineesPage />} />
@@ -36,23 +63,28 @@ function App() {
       <Route path="/nominees/:id/vote-success" element={<VoteSuccess />} />
       <Route path="/nominees/:id/receipt" element={<VotingReceipt />} />
 
-      <Route path="" element={<AppLayout />}>
-      <Route path="/wallet" element={<WalletHome />} />
-      <Route path="/wallet-coins" element={<WalletCoins />} />
-      <Route path="/wallet-pay" element={<WalletPay />} />
+      {/* Wallet (with AppLayout) */}
+      <Route element={<AppLayout />}>
+        <Route path="/wallet" element={<WalletHome />} />
+        <Route path="/wallet-coins" element={<WalletCoins />} />
+        <Route path="/wallet-pay" element={<WalletPay />} />
       </Route>
+
+      {/* Wallet (standalone) */}
       <Route path="/payment-process" element={<PaymentProcess />} />
       <Route path="/transaction-history" element={<TransactionHistory />} />
       <Route path="/voting-history" element={<VotingHistory />} />
       <Route path="/profile" element={<Profile />} />
 
-
-
+      {/* Organizer */}
+      <Route path="/organizer/dashboard" element={<TestDash />} />
+      <Route path="/organizer/create-event" element={<CreateEvent />} />
+      <Route path="/organizer/manage-categories" element={<ManageCategories />} />
+      <Route path="/organizer/add-nominee" element={<AddNominee />} />
+      <Route path="/organizer/nominees-management" element={<NomineesManagement />} />
+      <Route path="/organizer/revenue" element={<RevenueOverview />} />
     </Routes>
   );
 }
 
 export default App;
-
-      
-
