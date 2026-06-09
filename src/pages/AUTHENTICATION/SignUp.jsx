@@ -60,7 +60,7 @@ export default function SignUp() {
     setSuccess("Account created successfully! Redirecting...");
 
     setTimeout(() => {
-      navigate("/signin");
+      navigate("/vote");
     }, 2000);
   };
 

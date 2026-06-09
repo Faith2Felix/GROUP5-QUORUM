@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import{ React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
@@ -38,7 +38,7 @@ export default function SignIn() {
     setSuccess("Welcome back! Redirecting...");
 
     setTimeout(() => {
-      navigate("/");
+      navigate("/voting");
     }, 2000);
   };
 

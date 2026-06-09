@@ -37,7 +37,7 @@ const OnboardingStep3 = () => {
 
         <div className="w-full flex flex-col items-center space-y-3.5">
           <button 
-            onClick={() => navigate("/wallet")}
+            onClick={() => navigate("/sign-in")}
             className="w-full py-3.5 rounded-2xl text-[15px] font-semibold bg-[#7B3FF2] hover:opacity-90 text-white tracking-wide transition-all cursor-pointer shadow-lg"
           >
             Get Started

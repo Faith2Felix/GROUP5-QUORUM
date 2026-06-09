@@ -48,6 +48,9 @@ import AddNominee from "./pages/organizers/AddNominee.jsx";
 import NomineesManagement from "./pages/organizers/NomineesManagement.jsx";
 import RevenueOverview from "./pages/organizers/RevenueOverview.jsx";
 
+//Leaderboard pages
+import LeaderBoard from "./pages/LEADERBOARD/LeaderBoard.jsx";
+
 function App() {
   const navigate = useNavigate();
 
@@ -87,13 +90,15 @@ function App() {
         <Route path="/wallet" element={<WalletHome />} />
         <Route path="/wallet-coins" element={<WalletCoins />} />
         <Route path="/wallet-pay" element={<WalletPay />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* LeaderBoard routes */}
+        <Route path="/leaderboard" element={<LeaderBoard/>}/>
       </Route>
 
       {/* General App Routes */}
       <Route path="/payment-process" element={<PaymentProcess />} />
       <Route path="/transaction-history" element={<TransactionHistory />} />
       <Route path="/voting-history" element={<VotingHistory />} />
-      <Route path="/profile" element={<Profile />} />
 
       {/* Organizer */}
       {/* Admin Module Routes */}
