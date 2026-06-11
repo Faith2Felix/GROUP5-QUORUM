@@ -5,22 +5,27 @@ import { Sun, Bell } from "lucide-react";
 import SearchBar from "../../Components/Voting/SearchBar";
 import NomineeCard from "../../Components/Voting/NomineeCard";
 import CategoryRow from "../../Components/Voting/CategoryRow";
-// import Button from "../../Components/Voting/Button";
-import Banner from "../../assets/Images/Banner.png";
 
-import { trendingNominees, topCategories, getLeader } from "../../Data/VotingData";
+import {
+  trendingNominees,
+  topCategories,
+  getLeader,
+} from "../../Data/VotingData";
 
-function QuorumVotingHome() {
+function QuorumVotingHome({ setIsOpen }) {
   const [search, setSearch] = useState("");
+
   const navigate = useNavigate();
+
   const leader = getLeader();
 
-  // filter trending nominees by search
   const filteredTrending = useMemo(() => {
     const q = search.trim().toLowerCase();
+
     if (!q) return trendingNominees;
+
     return trendingNominees.filter((n) =>
-      `${n.name} ${n.category}`.toLowerCase().includes(q)
+      `${n.name} ${n.category}`.toLowerCase().includes(q),
     );
   }, [search]);
 
@@ -157,7 +162,6 @@ function QuorumVotingHome() {
             <div className="text-[16px] font-semibold text-[#4ade80]">+1.2k trending</div>
           </div>
         </div>
-
       </div>
     </div>
   );

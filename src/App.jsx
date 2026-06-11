@@ -40,6 +40,8 @@ import OnboardingStep1 from "./pages/public_pages/OnboardingStep1";
 import OnboardingStep2 from "./pages/public_pages/OnboardingStep2";
 import OnboardingStep3 from "./pages/public_pages/OnboardingStep3";
 import RoleSelect from "./pages/AUTHENTICATION/RoleSelect.jsx";
+import RoleSelect from "./pages/AUTHENTICATION/RoleSelect.jsx";
+
 // Organizer Pages
 import TestDash from "./pages/organizers/TestDash.jsx";
 import CreateEvent from "./pages/organizers/CreateEvent.jsx";
@@ -62,6 +64,7 @@ function App() {
       <Route path="/onboarding-1" element={<OnboardingStep1 />} />
       <Route path="/onboarding-2" element={<OnboardingStep2 />} />
       <Route path="/onboarding-3" element={<OnboardingStep3 />} />
+      <Route path="/role-select" element={<RoleSelect />} />
 
       {/* Voting */}
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
