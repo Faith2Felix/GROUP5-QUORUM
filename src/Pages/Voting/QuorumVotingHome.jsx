@@ -25,13 +25,12 @@ function QuorumVotingHome() {
   }, [search]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-[#f5f3ee] bg-[rgb(38,46,66)]">
-      {/* Ambient glow */}
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_600px_300px_at_80%_10%,rgba(58,111,216,0.07)_0%,transparent_70%),radial-gradient(ellipse_400px_400px_at_10%_70%,rgba(201,168,76,0.05)_0%,transparent_60%)]" />
-
-      <div className="relative z-2 overflow-y-auto px-5 pb-20">
-        {/* Greeting */}
-        <div className="pt-7 pb-1">
+      <div className="relative min-h-screen w-screen overflow-x-hidden text-[#f5f3ee] bg-[#0A0A12]">
+        {/* Ambient glow */}
+        <div className="pointer-events-none fixed inset-0 bg-[#0A0A12]" />
+        <div className="relative z-10 px-5 pb-20">
+          {/* Greeting */}
+          <div className="pt-7 pb-1">
           <div className="mb-1 text-[16px] font-light tracking-[2px] text-rgb(221 221 221)">
             Good Morning
           </div>
@@ -69,13 +68,13 @@ function QuorumVotingHome() {
           <img
             src={Banner}
             alt="Vote for your favourite Nominee"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-auto object-cover rounded-2xl"
           />
          </div>
 
         {/* Trending Nominees */}
         <div className="my-6 mb-3 flex items-baseline justify-between">
-          <div className="text-[35px] font-bold">Trending Nominees</div>
+          <div className="text-[22px] font-semibold">Trending Nominees</div>
 
           <button
             onClick={() => navigate("/nominees")}
@@ -85,7 +84,7 @@ function QuorumVotingHome() {
           </button>
         </div>
 
-        <div className="flex gap-18px overflow-x-auto pb-1 scrollbar-none [&::-webkit-scrollbar]:hidden">
+        <div className="flex overflow-x-auto pb-1 scrollbar-none [&::-webkit-scrollbar]:hidden">
           {filteredTrending.map((n) => (
             <NomineeCard
               key={n.id}
@@ -121,10 +120,10 @@ function QuorumVotingHome() {
         </div>
 
         {/* Leaderboard Preview */}
-        <div className="mt-6 mb-3 text-[35px] font-bold">Leaderboard Preview</div>
+        <div className="mt-6 mb-3 min-w-[40px] text-[22px] font-semibold">Leaderboard Preview</div>
         <div
           onClick={() => navigate("/leaderboard")}
-          className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0d1f3c] px-4 py-12 cursor-pointer"
+          className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0d1f3c] px-4 py-12 cursor-pointer"
           style={{ borderLeft: "4px solid #6A2EE6" }}
         >
           {/* Avatar with trophy badge */}

@@ -1,8 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { categories, contestants } from "../../Data/LeaderboardData";
-import { BackArrowIcon, TrophyIcon } from "../../assets/Icon";
-import { DotIcon } from "../../assets/icon";
+import {
+  DotIcon,
+  BackArrowIcon,
+  TrophyIcon,
+  MedalIcon,
+  StarIcon,
+} from "../../assets/Icon";
 
 export default function LeaderBoard() {
   const navigate = useNavigate();

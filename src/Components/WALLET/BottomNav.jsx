@@ -26,7 +26,7 @@ const BottomNav = () => {
   };
 
   return (
-    <div className="fixed flex item-center bottom-0 left-0 w-full bg-[#0F172A] shadow-[0_-4px_20px_rgba(0,0,0,0.4)] border-t-[4px] border-black/50 justify-around z-50">
+    <div className="fixed flex item-center bottom-0 left-0 w-full bg-[#0F172A]  justify-around z-50">
       {navItems.map((item) => {
         const isActive = activeTab === item.id;
         const Icon = item.icon;

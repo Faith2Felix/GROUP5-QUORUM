@@ -39,7 +39,7 @@ import SplashScreen2 from "./pages/public_pages/SplashScreen2";
 import OnboardingStep1 from "./pages/public_pages/OnboardingStep1";
 import OnboardingStep2 from "./pages/public_pages/OnboardingStep2";
 import OnboardingStep3 from "./pages/public_pages/OnboardingStep3";
-
+import RoleSelect from "./pages/AUTHENTICATION/RoleSelect.jsx";
 // Organizer Pages
 import TestDash from "./pages/organizers/TestDash.jsx";
 import CreateEvent from "./pages/organizers/CreateEvent.jsx";
@@ -64,8 +64,6 @@ function App() {
       <Route path="/onboarding-3" element={<OnboardingStep3 />} />
 
       {/* Voting */}
-      <Route path="/voting" element={<QuorumVotingHome />} />
-      <Route path="/categories" element={<CategoriesPage />} />
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
       <Route path="/nominees" element={<NomineesPage />} />
       <Route path="/nominees/:id" element={<NomineeDetailPage />} />
@@ -92,7 +90,10 @@ function App() {
         <Route path="/wallet-pay" element={<WalletPay />} />
         <Route path="/profile" element={<Profile />} />
         {/* LeaderBoard routes */}
-        <Route path="/leaderboard" element={<LeaderBoard/>}/>
+        <Route path="/leaderboard" element={<LeaderBoard />} />
+        {/* Quorumvoting route */}
+        <Route path="/voting" element={<QuorumVotingHome />} />
+        <Route path="/categories" element={<CategoriesPage />} />
       </Route>
 
       {/* General App Routes */}
@@ -112,6 +113,7 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/role-select" element={<RoleSelect />} />
 
       {/* Organizer Flow Module Base */}
       <Route path="/organizer/dashboard" element={<TestDash />} />

@@ -2,3 +2,8 @@
   padding: 2rem;
   font-family: "Roboto", sans-serif;
 }
+
+.no-calendar::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
