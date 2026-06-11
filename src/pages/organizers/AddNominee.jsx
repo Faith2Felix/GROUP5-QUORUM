@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import davido from "../../assets/Images/Davido.png"
 const AddNominee = () => {
   const navigate = useNavigate();
 
@@ -84,7 +84,7 @@ const AddNominee = () => {
             {/* Circular Preview Container matching image canvas style */}
             <div className="w-20 h-20 rounded-full border border-gray-700/60 overflow-hidden bg-gray-800 flex items-center justify-center shadow-inner">
               <img 
-                src="/src/assets/Images/Background.png" 
+                src={davido} 
                 alt="Nominee Preview Placeholder" 
                 className="w-full h-full object-cover"
               />
@@ -96,7 +96,7 @@ const AddNominee = () => {
 
       {/* Full Width Primary Bottom Call-To-Action Button */}
       <div className="mt-8">
-        <button           onClick={() => navigate("")} 
+        <button           onClick={() => navigate("/organizer/manage-categories")} 
  className="w-full bg-[#7F4DFF] hover:bg-[#6A3BE6] active:scale-[0.99] text-white font-medium py-4 rounded-xl transition-all shadow-lg text-center tracking-wide text-base cursor-pointer">
           Add Nominee
         </button>

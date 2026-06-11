@@ -9,7 +9,7 @@ const RevenueOverview = () => {
       {/* Back Arrow Navigation */}
       <div className="mb-6">
         <button
-          onClick={() => navigate("/organizer/create-event")}
+          onClick={() => navigate(-1)}
           className="text-white hover:opacity-80 transition-opacity cursor-pointer focus:outline-none"
         >
           <svg

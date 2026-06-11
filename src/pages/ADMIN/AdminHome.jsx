@@ -25,7 +25,7 @@ export default function AdminHome() {
     {
       title: "Users",
       icon: <UsersIcon size={22}/>,
-       path:"/users",
+       path:"/user-mgt",
     },
     {
       title: "Events",
