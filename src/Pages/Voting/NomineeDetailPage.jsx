@@ -20,7 +20,7 @@ export default function NomineeDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#06060e] px-5 pt-6 text-white">
+    <div className="min-h-screen bg-[#06060e] px-5 pt-6 pb-16 text-white">
        <div className="w-full mb-6">
 
         <img
@@ -98,7 +98,7 @@ export default function NomineeDetailPage() {
       </div>
 
       {/* Actions */}
-      <div className="mt-3 flex flex-col gap-2 ">
+      <div className="mt-3 flex flex-col gap-6 ">
         <button 
           onClick={() => navigate(`/nominees/${id}/select-votes`)}
           className="rounded-lg bg-[#7B3FF2] px-4 py-4 text-lg text-white font-medium "
