@@ -24,7 +24,7 @@ export default VotingHomeLayout;
 
 // export default function VotingHomeLayout({ children }) {
 //   return (
-//     <div className="mx-auto w-full max-w-md min-h-screen bg-[#06060e]">
+//     <div className="mx-auto w-full max-w-md min-h-screen bg-[#0A0A12]">
 //       {children}
 //     </div>
 //   );

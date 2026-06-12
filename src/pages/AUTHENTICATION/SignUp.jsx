@@ -61,7 +61,7 @@ export default function SignUp() {
     setSuccess("Account created successfully! Redirecting...");
 
     setTimeout(() => {
-      navigate("/vote");
+      navigate("/role-select");
     }, 2000);
   };
 

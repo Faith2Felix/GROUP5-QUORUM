@@ -25,17 +25,17 @@ export default function AdminHome() {
     {
       title: "Users",
       icon: <UsersIcon size={22}/>,
-       path:"/users",
+       path:"/user-mgt",
     },
     {
       title: "Events",
       icon: <CalendarIcon size={22} />,
-      path:"/event",
+      path:"/admin/manage-categories",
     },
     {
       title: "Transactions",
       icon: <ClipboardIcon size={22} />,
-      path:"/transactions",
+      path:"/trans-monitor",
     },
     {
       title: "Reports",

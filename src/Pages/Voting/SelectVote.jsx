@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
 import { getNomineeById } from "../../Data/VotingData";
-
+import ReturnArrow from "../../Components/WALLET/ReturnArrow";
+import { CoinsIcon } from "../../assets/Icon";
 const COIN_PER_VOTE = 10;
 
 export default function SelectVotes() {
@@ -29,10 +29,10 @@ export default function SelectVotes() {
       {/* Header */}
       <div className="flex items-center justify-between px-5 pt-6 pb-4">
         <button onClick={() => navigate(-1)} className="flex h-9 w-9 items-center justify-center">
-          <ChevronLeft className="h-5 w-5 text-white/70" />
+          <ReturnArrow/>
         </button>
-        <span className="text-md text-white/50">
-          Coin balance <span className="font-bold text-white">{userCoins}</span>
+        <span className="text-md flex flex-col text-white/50">
+          Coin balance <span className="font-bold text-right text-[#F4B400]">{userCoins}</span>
         </span>
       </div>
 
@@ -48,7 +48,7 @@ export default function SelectVotes() {
           <button
             onClick={() => setVoteCount((v) => Math.max(1, v - 1))}
             disabled={voteCount <= 1}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6A2EE6] text-2xl font-bold disabled:opacity-30"
+            className="flex h-12 w-12 border border-gray-300 items-center justify-center rounded-full bg-[#7B3FF2] text-2xl font-bold disabled:opacity-30"
           >
             −
           </button>
@@ -60,16 +60,16 @@ export default function SelectVotes() {
 
           <button
             onClick={() => setVoteCount((v) => v + 1)}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6A2EE6] text-2xl font-bold"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7B3FF2] text-2xl font-bold"
           >
             +
           </button>
         </div>
 
         {/* Coin cost pill */}
-        <div className="mb-10 flex items-center gap-2 rounded-full bg-[#c9a84c]/20 border border-[#c9a84c]/30 px-5 py-2">
-          <span className="text-lg">🪙</span>
-          <span className="text-sm font-bold text-[#c9a84c]">{totalCost} Coins</span>
+        <div className="mt-14 flex items-center gap-2 px-5 py-2">
+          <span className="text-lg"><CoinsIcon/></span>
+          <span className="text-sm font-bold text-[#F4B400]">{totalCost} Coins</span>
         </div>
 
         {!canAfford && (
@@ -88,7 +88,7 @@ export default function SelectVotes() {
               state: { voteCount, totalCost, nominee },
             })
           }
-          className="w-full rounded-2xl bg-[#6A2EE6] py-4 text-sm font-extrabold disabled:opacity-40"
+          className="w-full rounded-xl bg-[#7B3FF2] py-4 text-sm font-medium disabled:opacity-40"
         >
           Vote
         </button>

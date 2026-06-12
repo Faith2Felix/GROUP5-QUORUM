@@ -6,7 +6,7 @@ import Best_Album_Logo from "../assets/Images/Best_Album.png";
 
 // ── Nominee images
 import BurnaBoy from "../assets/Images/BurnaBoy.png";
-import Davido from "../assets/Images/Background.png";
+import Davido from "../assets/Images/Davido.png";
 import Wizkid from "../assets/Images/Wizkid.png";
 import Asake from "../assets/Images/Asake.png";
 import Tems from "../assets/Images/Tems.png";
@@ -25,7 +25,7 @@ export const trendingNominees = [
     id: "burna-boy",
     rank: 1,
     name: "Burna Boy",
-    category: "Best Male Artist",
+    category: ["Best Male Artist", "Best Album"],
     img: BurnaBoy,
     votes: 12400,
     about: "Award-winning Afro-fusion artist known for global tours and chart-topping releases.",
@@ -40,7 +40,7 @@ export const trendingNominees = [
     id: "davido",
     rank: 2,
     name: "Davido",
-    category: "Best Album",
+    category:[ "Best Album","Best Male Artist"],
     img: Davido,
     votes: 9800,
     about: "Afrobeats star with major international collaborations and high-impact albums.",
@@ -55,7 +55,7 @@ export const trendingNominees = [
     id: "wizkid",
     rank: 3,
     name: "Wizkid",
-    category: "Song of the Year",
+    category: ["Best Album", "Best Male Artist"],
     img: Wizkid,
     votes: 8800,
     about: "Global Afrobeats icon with multiple award wins and international recognition.",
@@ -74,7 +74,7 @@ export const nominees = [
     id: "asake",
     rank: 4,
     name: "Asake",
-    category: "Best Album",
+    category: "Best Male Artist",
     img: Asake,
     votes: 7600,
     about: "High-energy performer with a strong album run and packed shows.",
@@ -96,7 +96,7 @@ export const nominees = [
     id: "rema",
     rank: 6,
     name: "Rema",
-    category: "Best New Act",
+    category: "Best Male Artist",
     img: Rema,
     votes: 6400,
     about: "Genre-bending artist with viral hits and fast-growing fanbase.",

@@ -2,21 +2,27 @@ export default function NomineeCard({ nominee, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="flex flex-col items-center gap-24 cursor-pointer shrink-0 w-96 mt-12 text-center"
       type="button"
+      className="flex flex-col items-center shrink-0 w-[140px] sm:w-[160px] cursor-pointer text-center"
     >
-      <div className="w-64 h-64 gap-24 rounded-full overflow-hidden border-2 border-white/10">
+      {/* IMAGE CONTAINER */}
+      <div className="w-[110px] h-[110px] sm:w-[120px] sm:h-[120px] rounded-full overflow-hidden border-2 border-white/10">
         <img
           src={nominee.img}
           alt={nominee.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover block"
         />
       </div>
-      <div className="text-center justify-between items-center p-3 ">
-        <p className="text-lg font-bold text-white leading-tight">{nominee.name}</p>
-        <p className="text-sm text-[#8a94a8] mt-0.5">{nominee.category}</p>
-      </div>
 
+      {/* TEXT */}
+      <div className="mt-3 px-2">
+        <p className="text-sm sm:text-base font-bold text-white leading-tight truncate">
+          {nominee.name}
+        </p>
+        <p className="text-xs sm:text-sm text-[#8a94a8] mt-0.5 truncate">
+          {nominee.category}
+        </p>
+      </div>
     </button>
   );
 }

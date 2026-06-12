@@ -73,10 +73,8 @@ const ManageCategories = () => {
       </div>
 
       {/* Bottom Section with Centered Text Label and Main Action Button */}
-      <div className="mt-10 space-y-6">
-        <p className="text-center text-base text-gray-100 font-medium tracking-tight">
-          View all Transactions
-        </p>
+      <div className="mt-18 space-y-6">
+  
         <button className="w-full bg-[#7F4DFF] hover:bg-[#6A3BE6] active:scale-[0.99] text-white font-medium py-4 rounded-xl transition-all shadow-lg text-center tracking-wide text-base cursor-pointer">
           View all Transactions
         </button>
@@ -85,5 +83,4 @@ const ManageCategories = () => {
     </div>
   );
 };
-
 export default ManageCategories;

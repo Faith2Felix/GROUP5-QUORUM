@@ -26,9 +26,12 @@ import FraudDetect from "./pages/ADMIN/FraudDetect";
 import UserMgt from "./pages/ADMIN/UserMgt";
 import TransMonitor from "./pages/ADMIN/TransMonitor";
 import Platform from "./pages/ADMIN/Platform";
+
+// Authentication pages
 import SignIn from "./pages/AUTHENTICATION/SignIn";
 import SignUp from "./pages/AUTHENTICATION/SignUp";
 import ResetPassword from "./pages/AUTHENTICATION/ResetPassword";
+import  RoleSelect from "./pages/AUTHENTICATION/RoleSelect.jsx";
 
 // Layout
 import AppLayout from "./Layouts/AppLayout";
@@ -50,6 +53,7 @@ import RevenueOverview from "./pages/organizers/RevenueOverview.jsx";
 
 //Leaderboard pages
 import LeaderBoard from "./pages/LEADERBOARD/LeaderBoard.jsx";
+import CampaignUnavailable from "./pages/Voting/CampaignUnavailable.jsx";
 
 function App() {
   const navigate = useNavigate();
@@ -64,10 +68,10 @@ function App() {
       <Route path="/onboarding-3" element={<OnboardingStep3 />} />
 
       {/* Voting */}
-      <Route path="/voting" element={<QuorumVotingHome />} />
-      <Route path="/categories" element={<CategoriesPage />} />
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
       <Route path="/nominees" element={<NomineesPage />} />
+      <Route path="/campaign-unavailable" element={<CampaignUnavailable/>} />
+      
       <Route path="/nominees/:id" element={<NomineeDetailPage />} />
       <Route path="/nominees/:id/select-votes" element={<SelectVotes />} />
       <Route path="/nominees/:id/processing" element={<Processing />} />
@@ -92,7 +96,10 @@ function App() {
         <Route path="/wallet-pay" element={<WalletPay />} />
         <Route path="/profile" element={<Profile />} />
         {/* LeaderBoard routes */}
-        <Route path="/leaderboard" element={<LeaderBoard/>}/>
+        <Route path="/leaderboard" element={<LeaderBoard />} />
+        {/* Quorumvoting route */}
+        <Route path="/voting" element={<QuorumVotingHome />} />
+        <Route path="/categories" element={<CategoriesPage />} />
       </Route>
 
       {/* General App Routes */}
@@ -112,6 +119,7 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/role-select" element={<RoleSelect />} />
 
       {/* Organizer Flow Module Base */}
       <Route path="/organizer/dashboard" element={<TestDash />} />
