@@ -21,12 +21,20 @@ export default function NomineeDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#06060e] px-5 pt-6 text-white">
-      <div className="grid items-center gap-12 sm:flex-row">
+       <div className="w-full mb-6">
+
         <img
+
           src={nominee.img}
+
           alt={nominee.name}
-          className="h-16 w-16 rounded-2xl object-cover border border-white/10"
+
+          className="w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover rounded-lg border border-white/10"
+
         />
+
+      </div>
+      <div className="flex items-center gap-12 sm:flex-row">
 
         <div className="min-w-0 space-y-1">
           <h1 className="truncate text-2xl font-bold">{nominee.name}</h1>
@@ -60,7 +68,7 @@ export default function NomineeDetailPage() {
       </div>
 
       {/* Tab content */}
-      <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="mt-4 p-4">
         {tab === "about" && <p className="text-sm text-white/80">{nominee.about}</p>}
 
         {tab === "stats" && (
@@ -81,7 +89,7 @@ export default function NomineeDetailPage() {
         )}
 
         {tab === "achievements" && (
-          <ul className="list-disc pl-5 text-sm text-white/80 space-y-2">
+          <ul className="list-disc text-sm text-white/80 space-y-2">
             {(nominee.achievements ?? []).map((a, idx) => (
               <li key={idx}>{a}</li>
             ))}
@@ -90,16 +98,16 @@ export default function NomineeDetailPage() {
       </div>
 
       {/* Actions */}
-      <div className="mt-16 flex flex-col gap-8 ">
+      <div className="mt-3 flex flex-col gap-2 ">
         <button 
           onClick={() => navigate(`/nominees/${id}/select-votes`)}
-          className="rounded-2xl bg-[rgb(151,38,251)] px-4 py-10 text-4xl font-normal text-white"
+          className="rounded-lg bg-[#7B3FF2] px-4 py-4 text-lg text-white font-medium "
         >
           Vote
         </button>
 
         <button
-          className="rounded-2xl border border-[rgb(138,41,228)] bg-white/5 px-4 py-8 text-3xl font-normal"
+          className="rounded-lg border border-[#7B3FF2] bg-white/5 px-4 py-3 text-lg font-medium"
           onClick={() => {
             // basic share (you can upgrade later)
             const url = window.location.href;

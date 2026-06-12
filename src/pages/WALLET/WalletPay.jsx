@@ -95,7 +95,7 @@ const WalletPay = () => {
       </div>
 
       {/* Pay Button */}
-      <div className="mt-18" onClick={() => navigate("/")}>
+      <div className="mt-18" onClick={() => navigate("/pay")}>
         <button
           disabled={!selectedMethod}
           className={`w-full py-3 rounded-lg font-medium transition ${

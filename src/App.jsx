@@ -53,6 +53,7 @@ import RevenueOverview from "./pages/organizers/RevenueOverview.jsx";
 
 //Leaderboard pages
 import LeaderBoard from "./pages/LEADERBOARD/LeaderBoard.jsx";
+import CampaignUnavailable from "./pages/Voting/CampaignUnavailable.jsx";
 
 function App() {
   const navigate = useNavigate();
@@ -69,6 +70,8 @@ function App() {
       {/* Voting */}
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
       <Route path="/nominees" element={<NomineesPage />} />
+      <Route path="/campaign-unavailable" element={<CampaignUnavailable/>} />
+      
       <Route path="/nominees/:id" element={<NomineeDetailPage />} />
       <Route path="/nominees/:id/select-votes" element={<SelectVotes />} />
       <Route path="/nominees/:id/processing" element={<Processing />} />
