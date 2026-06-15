@@ -25,17 +25,17 @@ export default function AdminHome() {
     {
       title: "Users",
       icon: <UsersIcon size={22}/>,
-       path:"/users",
+       path:"/user-mgt",
     },
     {
       title: "Events",
       icon: <CalendarIcon size={22} />,
-      path:"/event",
+      path:"/admin/manage-categories",
     },
     {
       title: "Transactions",
       icon: <ClipboardIcon size={22} />,
-      path:"/transactions",
+      path:"/trans-monitor",
     },
     {
       title: "Reports",
@@ -45,7 +45,7 @@ export default function AdminHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-white">
+    <div className="min-h-screen bg-[#0A0A12] text-white">
       {/* Sidebar */}
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen}  className="-[#D1BCFF]" />
 

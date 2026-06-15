@@ -29,9 +29,9 @@ const BottomNav = () => {
   }, [location.pathname]);
 
   const navItems = [
-    { id: "home", label: "Home", icon: HomeIcon, path:"/", },
+    { id: "home", label: "Home", icon: HomeIcon, path:"/voting", },
     { id: "leaderboard", label: "Leaderboard", icon: LeaderboardIcon, path:"/leaderboard", },
-    { id: "votes", label: "Votes", icon: VoteIcon, path:"/", },
+    { id: "votes", label: "Votes", icon: VoteIcon, path:"/categories", },
     { id: "wallet", label: "Wallet", icon: WalletIcon, path:"/wallet",},
     { id: "profile", label: "Profile", icon: UserIcon, path:"/profile" },
   ];
@@ -42,7 +42,7 @@ const BottomNav = () => {
   };
 
   return (
-    <div className="fixed flex item-center bottom-0 left-0 w-full bg-[#0F172A] shadow-[0_-4px_20px_rgba(0,0,0,0.4)] border-t-[4px] border-black/50 justify-around z-50">
+    <div className="fixed flex item-center bottom-0 left-0 w-full bg-[#0F172A]  justify-around z-50">
       {navItems.map((item) => {
         const isActive = activeTab === item.id;
         const Icon = item.icon;

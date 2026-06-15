@@ -8,7 +8,7 @@ const WalletPay = () => {
   const [selectedMethod, setSelectedMethod] = useState(null);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC] px-6 pt-8 pb-24">
+    <div className="min-h-screen bg-[#0A0A12] text-[#F8FAFC] px-6 pt-8 pb-24">
       {/* Header */}
       <div
         className="absolute top-10 left-4 text-[#D1BCFF] cursor-pointer"
@@ -95,7 +95,7 @@ const WalletPay = () => {
       </div>
 
       {/* Pay Button */}
-      <div className="mt-18" onClick={() => navigate("/")}>
+      <div className="mt-18" onClick={() => navigate("/pay")}>
         <button
           disabled={!selectedMethod}
           className={`w-full py-3 rounded-lg font-medium transition ${
