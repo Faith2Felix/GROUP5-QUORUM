@@ -25,18 +25,10 @@ const RoleSelect = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#0A0A12] text-white px-6">
       <div className="flex items-center mb-10 justify-center gap-1">
-  <img
-    src={quorum}
-    alt="Quorum Logo"
-    className="w-24"
-  />
-  <p className="text-white text-4xl font-semibold">
-    Quorum
-  </p>
-</div>
-      <h2 className="text-2xl font-semibold mb-2">
-        Who are you?
-      </h2>
+        <img src={quorum} alt="Quorum Logo" className="w-24" />
+        <p className="text-white text-4xl font-semibold">Quorum</p>
+      </div>
+      <h2 className="text-2xl font-semibold mb-2">Who are you?</h2>
 
       <p className="text-gray-400 mb-10 text-center">
         Choose how you will use the app

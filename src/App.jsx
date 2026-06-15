@@ -33,7 +33,7 @@ import Platform from "./pages/ADMIN/Platform";
 import SignIn from "./pages/AUTHENTICATION/SignIn";
 import SignUp from "./pages/AUTHENTICATION/SignUp";
 import ResetPassword from "./pages/AUTHENTICATION/ResetPassword";
-import  RoleSelect from "./pages/AUTHENTICATION/RoleSelect.jsx";
+import RoleSelect from "./pages/AUTHENTICATION/RoleSelect";
 
 // Layout
 import AppLayout from "./Layouts/AppLayout";
@@ -72,8 +72,8 @@ function App() {
       {/* Voting */}
       <Route path="/categories/:label" element={<CategoryNomineesPage />} />
       <Route path="/nominees" element={<NomineesPage />} />
-      <Route path="/campaign-unavailable" element={<CampaignUnavailable/>} />
-      
+      <Route path="/campaign-unavailable" element={<CampaignUnavailable />} />
+
       <Route path="/nominees/:id" element={<NomineeDetailPage />} />
       <Route path="/nominees/:id/select-votes" element={<SelectVotes />} />
       <Route path="/nominees/:id/processing" element={<Processing />} />
@@ -93,7 +93,6 @@ function App() {
 
       {/* Wallet Routes Wrapper */}
       <Route path="" element={<AppLayout />}>
-        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/wallet" element={<WalletHome />} />
         <Route path="/wallet-coins" element={<WalletCoins />} />
         <Route path="/wallet-pay" element={<WalletPay />} />
