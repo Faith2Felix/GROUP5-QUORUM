@@ -1,5 +1,4 @@
-const BASE_URL = "https://quorum-backend-1-h3vo.onrender.com";
-
+const BASE_URL = import.meta.env.VITE_API_URL;
 // REGISTER
 export const registerUser = async (userData) => {
   try {
