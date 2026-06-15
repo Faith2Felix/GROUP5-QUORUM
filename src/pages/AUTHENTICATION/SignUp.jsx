@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import google from "../../assets/Images/google.png"
+import google from "../../assets/Images/google.png";
+import { registerUser } from "../../Services/Api";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function SignUp() {
 
   const getPasswordStrength = (val) => {
     let score = 0;
-    if (val.length >= 8) score++;
+    if (val.length >= 6) score++;
     if (/[A-Z]/.test(val)) score++;
     if (/[0-9]/.test(val)) score++;
     if (/[^A-Za-z0-9]/.test(val)) score++;
@@ -32,7 +33,7 @@ export default function SignUp() {
     return "Strong";
   };
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     const newErrors = {};
 
     if (!fullName.trim()) newErrors.fullName = "Full name is required.";
@@ -58,13 +59,35 @@ export default function SignUp() {
     if (Object.keys(newErrors).length > 0) return;
 
     setLoading(true);
-    setSuccess("Account created successfully! Redirecting...");
+    setSuccess("");
 
-    setTimeout(() => {
-      navigate("/role-select");
-    }, 2000);
+    try {
+      const data = await registerUser({
+        name: fullName,
+        email,
+        password,
+      });
+
+      console.log("Signup response:", data);
+
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+
+        setSuccess("Account created successfully! Redirecting...");
+
+        setTimeout(() => {
+          navigate("/role-select");
+        }, 2000);
+      } else {
+        setErrors({ api: data.message || "Signup failed" });
+      }
+    } catch (error) {
+      console.error(error);
+      setErrors({ api: "Network error. Try again." });
+    } finally {
+      setLoading(false);
+    }
   };
-
   const strength = getPasswordStrength(password);
 
   return (
@@ -240,13 +263,13 @@ export default function SignUp() {
           >
             {loading ? "Creating account..." : "Sign Up"}
           </button>
-          
-           {/* DIVIDER */}
-        <div className="flex items-center gap-5">
-          <div className="h-px flex-1 bg-[#94A3B8]" />
-          <span className="text-white/50 text-base">Or</span>
-          <div className="h-px flex-1 bg-[#94A3B8]" />
-        </div>
+
+          {/* DIVIDER */}
+          <div className="flex items-center gap-5">
+            <div className="h-px flex-1 bg-[#94A3B8]" />
+            <span className="text-white/50 text-base">Or</span>
+            <div className="h-px flex-1 bg-[#94A3B8]" />
+          </div>
 
           {/* GOOGLE */}
           <button className="w-full text-lg h-12 border border-[#7B3FF2] rounded-lg flex items-center justify-center gap-3 hover:bg-white/25 transition">
