@@ -82,7 +82,6 @@ function App() {
         <Route path="/nominees" element={<NomineesPage />} />
         <Route path="/nominees/:id" element={<NomineeDetailPage />} />
         <Route path="/nominees/:id/select-votes" element={<SelectVotes />} />
-        <Route path="/nominees/:id/processing" element={<Processing />} />
         <Route path="/nominees/:id/campaign-paused" element={<CampaignPaused />} />
         <Route path="/nominees/:id/insufficient-coins" element={<InsufficientCoins />} />
         <Route path="/nominees/:id/vote-success" element={<VoteSuccess />} />
@@ -93,14 +92,15 @@ function App() {
         <Route path="/wallet" element={<WalletHome />} />
         <Route path="/wallet-coins" element={<WalletCoins />} />
         <Route path="/wallet-pay" element={<WalletPay />} />
-        <Route path="/payment-process" element={<PaymentProcess />} />
-        <Route path="/transaction-history" element={<TransactionHistory />} />
-        <Route path="/voting-history" element={<VotingHistory />} />
         <Route path="/profile" element={<Profile />} />
 
         {/* Leaderboard */}
         <Route path="/leaderboard" element={<LeaderBoard />} />
-
+ </Route>
+ <Route path="/nominees/:id/processing" element={<Processing />} />
+         <Route path="/payment-process" element={<PaymentProcess />} />
+        <Route path="/transaction-history" element={<TransactionHistory />} />
+        <Route path="/voting-history" element={<VotingHistory />} />
         {/* Organizer */}
         <Route path="/organizer/dashboard" element={<TestDash />} />
         <Route path="/organizer/create-event" element={<CreateEvent />} />
@@ -115,7 +115,7 @@ function App() {
         <Route path="/user-mgt" element={<UserMgt />} />
         <Route path="/trans-monitor" element={<TransMonitor />} />
         <Route path="/platform" element={<Platform />} />
-      </Route>
+     
     </Routes>
   );
 }
