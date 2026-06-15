@@ -14,6 +14,7 @@ import VoteSuccess from "./Pages/Voting/VoteSuccess";
 import VotingReceipt from "./Pages/Voting/VotingReceipt";
 
 // Wallet Pages
+
 import WalletHome from "./pages/WALLET/WalletHome";
 import WalletCoins from "./pages/WALLET/WalletCoins";
 import WalletPay from "./pages/WALLET/WalletPay";
